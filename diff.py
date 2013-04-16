@@ -1,4 +1,4 @@
-from os import system
+import os
 from selenium import webdriver
 from sys import argv
 
@@ -32,6 +32,5 @@ for site in sites_to_compare:
     else:
         file_mappings["site_two_css"] = filename 
     i+=1
-    # return file_mappings
 
 os.system('diff %s %s' % (file_mappings['site_one_css'], file_mappings['site_two_css']))

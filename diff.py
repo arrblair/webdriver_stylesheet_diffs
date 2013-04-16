@@ -16,7 +16,8 @@ for site in sites_to_compare:
     stylesheet_urls.append((driver.execute_script('return document.styleSheets[0]["href"];')))    
     stylesheet = (driver.execute_script('return document.styleSheets[0]["href"];'))
     driver.get(stylesheet)
-    split_current_url = driver.current_url
+    current_url = driver.current_url
+    split_current_url = current_url('/')
     length = len(split_current_url)
     filename = split_current_url[length-1]
     if 'css' in filename[-3:]:

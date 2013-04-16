@@ -1,3 +1,4 @@
+from os import system
 from selenium import webdriver
 from sys import argv
 
@@ -11,4 +12,9 @@ stylesheet_urls = []
 for site in sites_to_compare():
     driver.get(site) 
     stylesheet_urls.append((driver.execute_script('return document.styleSheets[0]["href"];')))    
+    stylesheet = (driver.execute_script('return document.styleSheets[0]["href"];'))
+    driver.get(stylesheet)
+    css = driver.page_source
     return stylesheet_urls
+
+

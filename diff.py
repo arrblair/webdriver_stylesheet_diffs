@@ -10,5 +10,5 @@ stylesheet_urls = []
 
 for site in sites_to_compare():
     driver.get(site) 
-    stylesheets.append((driver.execute_script('return document.styleSheets[0]["href"];')))    
+    stylesheet_urls.append((driver.execute_script('return document.styleSheets[0]["href"];')))    
     return stylesheet_urls

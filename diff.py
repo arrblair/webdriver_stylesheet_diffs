@@ -28,7 +28,9 @@ for site in sites_to_compare():
     new_css_file.write(css)
     new_css_file.close()
     if i = 0:
-        file_mappings("site_one_css") = filename
+        file_mappings["site_one_css"] = filename
     else:
-        file_mappings("site_two_css") = filename 
+        file_mappings["site_two_css"] = filename 
     return file_mappings
+
+os.system('diff %s %s' % (file_mappings['site_one_css'], file_mappings['site_two_css']))

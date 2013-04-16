@@ -9,7 +9,7 @@ sites_to_compare = [site_one, site_two]
 driver = webdriver.Chrome()
 stylesheet_urls = []
 file_mappings = {"site_one_css": "", "site_two_css": ""}
-i+=0
+i=0
 
 for site in sites_to_compare():
     driver.get(site) 
@@ -27,10 +27,11 @@ for site in sites_to_compare():
     new_css_file = open(filename, "w")
     new_css_file.write(css)
     new_css_file.close()
-    if i = 0:
+    if i == 0:
         file_mappings["site_one_css"] = filename
     else:
         file_mappings["site_two_css"] = filename 
-    return file_mappings
+    i+=1
+    # return file_mappings
 
 os.system('diff %s %s' % (file_mappings['site_one_css'], file_mappings['site_two_css']))

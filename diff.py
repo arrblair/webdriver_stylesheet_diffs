@@ -24,6 +24,7 @@ for site in sites_to_compare:
         print "Query strings won't be necessary." 
         filename = filename.split('?')
         filename = filename[0]
+        filename += '.css' 
     else:
         filename += '.css' 
     css = driver.page_source
